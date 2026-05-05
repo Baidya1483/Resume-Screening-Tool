@@ -1,28 +1,40 @@
-# 📈 Stock Market Data Analyzer
+# 📄 Automated Resume Screening Tool
 
-A professional-grade financial analytics tool built with Python to ingest market data, compute technical indicators, and backtest trading strategies. This project serves as a comprehensive portfolio piece demonstrating time-series analysis and modular software architecture.
+An AI-powered Human Resources (HR) technology tool designed to automate the initial screening of resumes against specific job descriptions. This project utilizes **Natural Language Processing (NLP)** and **Semantic Similarity** to rank candidates objectively based on skill sets and experience.
 
 ---
 
 ## 🚀 Overview
-
-The **Stock Market Data Analyzer** solves the problem of manual market research by automating the collection of historical price data and the evaluation of trading rules. It bridges the gap between raw data and actionable financial insights through an interactive dashboard.
-
-
+The **Automated Resume Screening Tool** solves the challenge of manual high-volume recruitment. By extracting structured data from unstructured PDF/DOCX files, the system identifies "Must-Have" skills and calculates a weighted matching score, significantly reducing time-to-shortlist.
 
 ### ✨ Key Features
-*   **Real-time Data Ingestion**: Seamlessly fetches OHLCV data from Yahoo Finance[cite: 3].
-*   **Technical Indicators**: Automated calculation of SMA20, SMA50, RSI, and Bollinger Bands[cite: 3].
-*   **Strategy Backtesting**: A vectorized engine that simulates historical performance and calculates the "Equity Curve"[cite: 3].
-*   **Performance KPIs**: Instant calculation of Strategy Return (PnL), Volatility, and Trend signals[cite: 3].
-*   **Interactive UI**: A Streamlit-based dashboard for visualizing price action and strategy growth[cite: 3].
+*   **Multi-Format Ingestion**: Supports text extraction from PDF and DOCX resumes using `pdfplumber`.
+*   **Skill Extraction Engine**: Uses Regex and NLP to identify industry-specific technical skills.
+*   **Semantic Ranking**: Employs **Transformer-based embeddings** (`all-MiniLM-L6-v2`) to understand the context of a candidate's experience beyond simple keyword matching.
+*   **Explainable Scoring**: Provides a breakdown of why a candidate was ranked, including "Must-Have" skill coverage and experience verification[cite: 4].
+*   **Recruiter Dashboard**: An interactive Streamlit interface for job creation and candidate ranking[cite: 4].
 
 ---
 
 ## 🛠️ Tech Stack
-*   **Language**: Python 3.11+[cite: 3]
-*   **Data Science**: Pandas, NumPy[cite: 3]
-*   **Financial APIs**: yfinance[cite: 3]
-*   **Technical Analysis**: ta-lib / ta[cite: 3]
-*   **Database**: SQLite[cite: 3]
-*   **Frontend**: Streamlit[cite: 3]
+*   **Language**: Python 3.11+[cite: 4]
+*   **NLP & ML**: SpaCy, Sentence-Transformers (BERT variants), Scikit-learn[cite: 4]
+*   **Parsing**: PDFPlumber, Python-Docx[cite: 4]
+*   **Web Framework**: Streamlit (Frontend), FastAPI (Backend API)[cite: 4]
+*   **Database**: SQLite[cite: 4]
+
+---
+
+## 🏗️ Project Structure
+```text
+Automated-Resume-Screening-Tool/
+├── resumes/            # Directory for sample PDF/DOCX resumes[cite: 4]
+├── db/                 # SQLite storage for parsed candidate profiles[cite: 4]
+├── src/                # Modular Python logic[cite: 4]
+│   ├── parser.py       # Document text extraction[cite: 4]
+│   ├── extractor.py    # NLP-based skill & entity extraction[cite: 4]
+│   └── ranker.py       # Semantic similarity and scoring engine[cite: 4]
+├── main.py             # Streamlit Dashboard entry point[cite: 4]
+├── requirements.txt    # Project dependencies[cite: 4]
+├── .gitignore          # Files excluded from version control[cite: 4]
+└── README.md           # Documentation
